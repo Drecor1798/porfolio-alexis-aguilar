@@ -1,0 +1,522 @@
+/* NORMALIZACION */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'inconsolata', monospace;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+body {
+    background-color: black;
+    /*TODO: borrar cuando tengamos el fondo final*/
+}
+
+header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 5%;
+    background-color: transparent;
+}
+
+header.sticky {
+    background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.header {
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.header.scrolled {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.navlist {
+    display: flex;
+}
+
+.navlist a {
+    margin-left: 60px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all .5s ease;
+}
+
+.navlist a:hover {
+    border-bottom: 2px solid white;
+}
+
+#menu-icon {
+    display: none;
+    font-size: 35px;
+    z-index: 101;
+    cursor: pointer;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon-action {
+    display: none;
+}
+
+.hero {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+}
+
+section {
+    padding: 0 8%;
+}
+
+.hero-text h1 {
+    font-size: 50px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.hero-text p {
+    font-size: 80%;
+    margin-bottom: 40px;
+    line-height: 1.9;
+}
+
+.hero-img img {
+    width: 400px;
+    border-radius: 360px;
+    margin: 10% 0 0 10%;
+    height: auto;
+    transition: all 0.3s ease;
+    border: double rgba(25, 53, 3, 0.363) 5px;
+}
+
+.hero-img img:hover {
+    width: 450px;
+    opacity: 0.6;
+}
+
+.hero-text a {
+    display: inline-block;
+    background-color: #4d4d4d;
+    border: 1px solid transparent;
+    padding: 15px 30px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all .5s ease;
+}
+
+.hero-text a:hover {
+    background-color: transparent;
+    border: 1px solid white;
+    transform: translateX(8px);
+}
+
+.sobre-mi {
+    padding: 50px 8%;
+    background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
+    min-height: 100vh;
+    color: #fff;
+}
+
+.sobre-mi h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sobre-mi p {
+    color: #b5b5b5;
+    text-align: justify;
+    margin-bottom: 30px;
+}
+
+.sobre-mi h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+.sobre-mi .skills {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+
+.sobre-mi .skills li {
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.1rem;
+    text-align: center;
+    width: 150px;
+    transition: background-color 0.3s;
+}
+
+.sobre-mi .skills li:hover {
+    background-color: #0056b3;
+}
+
+.sobre-mi strong {
+    color: #4d9f96;
+}
+
+.sobre-mi table {
+    border-radius: 7px;
+    width: 100%;
+    margin: 50px auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-mi td,
+th {
+    padding: 15px;
+    text-align: center;
+    width: 20%;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    color: white;
+}
+
+.sobre-mi .pdf-container1 {
+    width: 100%;
+    height: 600px;
+    border: 1px solid #ddd;
+}
+
+.portfolio {
+    padding: 50px 8%;
+    background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
+    min-height: 100vh;
+    color: #fff;
+}
+
+.portfolio h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.portfolio p {
+    color: #b5b5b5;
+    text-align: justify;
+    margin-bottom: 30px;
+}
+
+.portfolio h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+.portfolio .portfolios {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+
+.portfolio .portfolios li {
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.1rem;
+    text-align: center;
+    width: 150px;
+    transition: background-color 0.3s;
+}
+
+.portfolio .portfolios li:hover {
+    background-color: #0056b3;
+}
+
+.icons {
+    position: absolute;
+    top: 50vh;
+    padding: 0 3%;
+    transform: translateY(-50%);
+}
+
+.icons i {
+    display: block;
+    margin: 16px;
+    font-size: 24px;
+    transition: all 0.5s ease;
+}
+
+.icons i:hover {
+    color: #4d4d4d;
+    transform: translateY(-5px);
+}
+
+
+/* Estilos para la Sección de Contacto */
+
+#contacto {
+    padding: 60px 20px;
+    background-color: #f7f7f7;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#contacto h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#contacto p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+#contacto .social-icon {
+    font-size: 36px;
+    color: #333;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #0073b1;
+    transform: scale(1.2);
+}
+
+#contacto {
+    background: linear-gradient(135deg, #0073b1, #00b0ff);
+    color: white;
+}
+
+#contacto .social-icon:hover {
+    color: #fff;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+}
+
+.scroll-down i {
+    display: block;
+    padding: 12px;
+    font-size: 25px;
+    background-color: #21383d;
+    border-radius: 30px;
+    transition: all .5s ease;
+}
+
+.scroll-down i:hover {
+    transform: translateY(-5px);
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.gallery-item {
+    width: 30%;
+    /* Tamaño de las imágenes en la galería */
+    margin-bottom: 20px;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.1);
+    /* Efecto de zoom al pasar el ratón por encima */
+}
+
+#contacto {
+    padding: 60px 20px;
+    background-color: #f7f7f7;
+    /* Fondo claro para la sección de contacto */
+    text-align: center;
+    /* Centra el contenido */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra ligera para separar la sección */
+}
+
+
+/* Título de la sección */
+
+#contacto h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+
+/* Descripción en la sección de contacto */
+
+#contacto p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+
+/* Estilos de los iconos de redes sociales */
+
+.icons2 {
+    display: flex;
+    justify-content: center;
+    /* Centra los iconos horizontalmente */
+    gap: 20px;
+    /* Espacio entre los iconos */
+}
+
+.social-icon {
+    font-size: 36px;
+    color: #333;
+    /* Color predeterminado de los iconos */
+    transition: transform 0.3s ease, color 0.3s ease;
+    /* Animación suave para cambios de color y escala */
+}
+
+
+/* Efecto hover para los iconos */
+
+.social-icon:hover {
+    color: #0073b1;
+    /* Cambia el color a un tono de azul (puedes ajustarlo) */
+    transform: scale(1.2);
+    /* Aumenta el tamaño de los iconos cuando se pasa el cursor */
+}
+
+
+/* Opcional: Agregar un fondo de imagen o un gradiente */
+
+#contacto {
+    background: linear-gradient(135deg, #0073b1, #00b0ff);
+    /* Gradiente de azul */
+    color: white;
+}
+
+#contacto .social-icon:hover {
+    color: #fff;
+    /* Cambia el color de los iconos a blanco en hover */
+}
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 992px) {
+    section {
+        padding: 0 3%;
+    }
+    .hero-text {
+        padding-top: 0;
+    }
+    .hero-img {
+        text-align: center;
+    }
+    .hero-img img {
+        width: 80%;
+    }
+    .icons {
+        display: none;
+    }
+    .scroll-down {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-icon-action {
+        display: block;
+    }
+    #menu-icon {
+        display: block;
+    }
+    .hero-text {
+        text-align: center;
+        padding-top: 100px;
+    }
+    .hero-img img {
+        margin: 0;
+    }
+    .hero {
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+    .navlist {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #111;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        gap: 50px;
+        padding-left: 20px;
+        transform: translateX(-100%);
+        transition: transform 0.5s ease;
+    }
+    .navlist.open {
+        transform: translateX(0);
+    }
+    .navlist a {
+        font-size: 22px;
+    }
+    #menu-toggle:checked+.menu-icon-action+.navlist {
+        transform: translateX(0);
+    }
+}
